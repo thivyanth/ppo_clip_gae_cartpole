@@ -5,6 +5,8 @@ import gym
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.optim as optim
+from torch.distributions.categorical import Categorical
 from distutils.util import strtobool
 from torch.utils.tensorboard import SummaryWriter
 
@@ -51,4 +53,25 @@ if __name__ == "__main__":
     assert isinstance(envs.single_action_space, gym.spaces.Discrete), "only discrete action space is supported"
     
     agent = Agent(envs).to(device)
-    print(agent)
+    optimizer = optim.Adam(agent.parameters(), lr=args.learning_rate, eps=1e-5)
+    
+    # Storage setup
+    obs = torch.zeros((args.num_steps, args.num_envs) + envs.single_observation_space.shape).to(device)
+    actions = torch.zeros((args.num_steps, args.num_envs) + envs.single_action_space.shape).to(device)
+    logprobs = torch.zeros((args.num_steps, args.num_envs)).to(device)
+    rewards = torch.zeros((args.num_steps, args.num_envs)).to(device)
+    dones = torch.zeros((args.num_steps, args.num_envs)).to(device)
+    values = torch.zeros((args.num_steps, args.num_envs)).to(device)
+    
+    # start the game
+    global_step = 0
+    start_time = time.time()
+    next_obs = torch.Tensor(envs.reset()).to(device)
+    next_done = torch.zeros(args.num_envs).to(device)
+    num_updates = args.total_timesteps // args.batch_size
+    
+    for update in range(1, num_updates + 1):
+        pass  # TODO: implement the PPO algorithm here
+           
+    envs.close()
+    writer.close()
