@@ -11,7 +11,7 @@ import gym
 from torch.utils.tensorboard import SummaryWriter
 
 from agent import Agent
-
+from env import make_env
 # fmt: off
 def parse_args():
     
