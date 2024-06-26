@@ -34,6 +34,7 @@ def make_env(gym_id, seed, idx, capture_video, run_name):
         if capture_video:
             if idx == 0:
                 env = gym.wrappers.RecordVideo(env, f"videos/{run_name}")
+                # env = gym.wrappers.(env, f"videos/{run_name}", force=True)
         env.reset(seed=seed)
         env.action_space.seed(seed)
         env.observation_space.seed(seed)
