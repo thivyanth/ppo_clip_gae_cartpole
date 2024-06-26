@@ -2,8 +2,20 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+
     "version": "0.2.0",
     "configurations": [
+
+        // {
+        //     "name": "Run Script",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "program": "${workspaceFolder}/run.py",
+        //     "console": "integratedTerminal",
+        //     "env": {
+        //         "PYTHONPATH": "${workspaceFolder}"
+        //     }
+        // },
         {
             "name": "Python Debugger: Remote Attach",
             "type": "debugpy",
@@ -20,4 +32,6 @@
             ]
         }
     ]
+
+    
 }
