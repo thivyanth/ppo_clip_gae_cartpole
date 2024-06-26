@@ -28,6 +28,9 @@ def parse_args():
         help="the entity (team) of wandb's project")
     parser.add_argument("--capture-video", type=lambda x: bool(strtobool(x)), default=False, nargs="?", const=True,
         help="weather to capture videos of the agent performances (check out `videos` folder)")
+    parser.add_argument("--debug", type=lambda x: bool(strtobool(x)), default=False, nargs="?", const=True,
+        help="if toggled, debug mode will be enabled")
+    
     
     # Algorithm specific arguments
     parser.add_argument("--num-envs", type=int, default=4,
