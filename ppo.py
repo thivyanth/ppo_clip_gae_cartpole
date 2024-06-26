@@ -9,7 +9,7 @@ debugpy.wait_for_client()
 print("Debugger is attached")
 
 # Optional: break into the debugger at this point
-debugpy.breakpoint()
+# debugpy.breakpoint()
 
 import random
 import time
@@ -79,12 +79,16 @@ if __name__ == "__main__":
     # start the game
     global_step = 0
     start_time = time.time()
-    next_obs = torch.Tensor(envs.reset(seed=args.seed)).to(device)
+    debugpy.breakpoint()
+    # next_obs = torch.Tensor(envs.reset()).to(device)
+    next_obs = torch.Tensor(envs.reset()[0]).to(device)
     next_done = torch.zeros(args.num_envs).to(device)
     num_updates = args.total_timesteps // args.batch_size
     
-    for update in range(1, num_updates + 1):
-        pass  # TODO: implement the PPO algorithm here
+    
+            
+            
+            
            
     envs.close()
     writer.close()
