@@ -3,7 +3,8 @@
 I implemented PPO to solidify and apply my RL concepts.
 
 
-![Centered Image](image.png){ width=60% style="display: block; margin: 0 auto;" }
+<img src="image.png" alt="Centered Image" style="display: block; margin: 0 auto; width: 60%;">
+
 
 ![alt text](image-2.png)
 ![alt text](image-3.png)
