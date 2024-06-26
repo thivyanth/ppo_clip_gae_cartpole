@@ -1,3 +1,16 @@
+import debugpy
+
+# Allow other computers to attach to debugpy at this IP address and port.
+debugpy.listen(("localhost", 5678))
+print("Waiting for debugger attach...")
+
+# Pause the program until a remote debugger is attached
+debugpy.wait_for_client()
+print("Debugger is attached")
+
+# Optional: break into the debugger at this point
+debugpy.breakpoint()
+
 import random
 import time
 
@@ -66,7 +79,7 @@ if __name__ == "__main__":
     # start the game
     global_step = 0
     start_time = time.time()
-    next_obs = torch.Tensor(envs.reset()).to(device)
+    next_obs = torch.Tensor(envs.reset(seed=args.seed)).to(device)
     next_done = torch.zeros(args.num_envs).to(device)
     num_updates = args.total_timesteps // args.batch_size
     
