@@ -2,12 +2,10 @@
 
 I implemented PPO to solidify and apply my RL concepts.
 
-<p float="left">
-  <img src="image-2.png" alt="GAE Algorithm Part 1" width="45%" />
-  <img src="image-3.png" alt="GAE Algorithm Part 2" width="45%" />
-</p>
 
 ![alt text](image.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
 
 ## Installation
 Prerequisites:
