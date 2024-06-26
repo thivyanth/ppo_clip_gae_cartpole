@@ -2,6 +2,8 @@
 
 I implemented PPO to solidify and apply my RL concepts.
 
+![alt text](image.png)
+
 ## Installation
 Prerequisites:
 * Python 3.9
